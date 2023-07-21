@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace SOLID__Review_the_queue___Liskov_Substitution
 {
-    public class IntQueue<T> : MyQueue<T>
+    public class IntQueue : MyQueue<int>
     {
-        public override void Queue(T value)
+        public override void Queue(int value)
         {
             if (firstElement == array.Length - 1)
             {
@@ -17,7 +17,7 @@ namespace SOLID__Review_the_queue___Liskov_Substitution
             array[++firstElement] = value;
         }
 
-        public override T Dequeue()
+        public override int Dequeue()
         {
             if (firstElement == -1)
             {
@@ -26,7 +26,7 @@ namespace SOLID__Review_the_queue___Liskov_Substitution
             return array[firstElement--];
         }
 
-        public override T Peek()
+        public override int Peek()
         {
             if (firstElement == -1)
             {
